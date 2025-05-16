@@ -27,18 +27,24 @@ class Knight {
 }
 
 function addKnight(name, strength, magic) {
+    if (name === "" || strength === "" || magic === "") {
+        alert("Veuillez remplir les champs");
+        return;
+    }
     knights.push(new Knight(name, strength, magic));
 }
 
-function displayKnights(name, strength, magic, mana, hp, potions) {
-    if (inputname.value === "" || inputStrength.value === "" || inputMagic.value === "") {
-        alert("Veuillez remplir les champs")
+function displayKnights() {
+    // Vider ma div container
+    tagListPlayer.innerHTML = "";
+
+    if (knights.length === 0) {
+        const emptyMessage = document.createElement("div");
+        emptyMessage.className = "character-card";
+        emptyMessage.textContent = "La liste des joueurs est vide.";
+        tagListPlayer.append(emptyMessage);
     } else {
-
-        // Vider ma div container
-        tagListPlayer.innerHTML = "";
-
-        knights.forEach(knight => {
+        knights.forEach((knight, index) => {
             // Création container pour afficher mes card personnage
             const divListCharacter      = document.createElement("div");
             divListCharacter.className  = "character-card";
@@ -62,6 +68,13 @@ function displayKnights(name, strength, magic, mana, hp, potions) {
             divCardPotions.className    = "character-card__potions";
             divCardHpBar.className      = "character-card__hp-bar";
 
+            // Création btn delete
+            const deleteBtn         = document.createElement("button");
+            deleteBtn.className     = "delete-btn";
+            deleteBtn.dataset.index = index;
+            deleteBtn.textContent   = "❌";
+
+
             // Insertion du contenu 
             divCardName.textContent     = `${knight.name}`
             divCardStrength.textContent = `💪 Force : ${knight.strength}`
@@ -78,9 +91,16 @@ function displayKnights(name, strength, magic, mana, hp, potions) {
             divListCharacter.append(divCardHp);
             divListCharacter.append(divCardPotions);
             divListCharacter.append(divCardHpBar);
+            divListCharacter.append(deleteBtn);
         })
-        
-    }   
+    }
+}
+
+function resetInputs() {
+    inputname.value     = "";
+    inputStrength.value = "";
+    inputMagic.value    = "";
+    inputname.focus();
 }
 
 
@@ -95,4 +115,12 @@ addBtn.addEventListener("click", function (e) {
 
     addKnight(name, strength, magic);
     displayKnights(name, strength, magic, 50, 100, 2);
+    resetInputs();
+})
+tagListPlayer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-btn")) {
+        const index = event.target.dataset.index;
+        knights.splice(index, 1);
+        displayKnights();
+    }
 })

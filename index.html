@@ -34,9 +34,12 @@
       <input type="number" id="strength" placeholder="Heroe's strength" required>
       <label for="Magic">Magic power:</label>
       <input type="number" id="magic" placeholder="Heroe's magic" required>
-      <button class="add-btn">Create player</button>
+      <button class="add-btn btn">Create player</button>
     </form>
-    <div class="list-player">Pas de joueur disponible.</div>
+    <div class="heroes">
+      <h2>Heroes available</h2>
+      <div class="list-player"><div class="character-card">Pas de joueur disponible.</div></div>
+    </div>
     <form action="#" class="fight-controls">
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
       <select name="attacker" id="attacker">
@@ -50,7 +53,7 @@
         <option value="swords">Swords</option>
         <option value="magic">Magic</option>
       </select>
-      <button class=".attack-btn">Attack</button>
+      <button class=".attack-btn btn">Attack</button>
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
     </form>
   </main>
