@@ -120,6 +120,7 @@ main {
         border-radius: 1rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         
         @media screen and (min-width:960px) {
             width: 23%;
