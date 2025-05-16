@@ -62,7 +62,7 @@ main {
         margin: 52rem auto 5rem;
         display: flex;
         flex-direction: column;
-        background-color: #807873;
+        background-color: #807873be;
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
         border-radius: 1rem;
@@ -109,17 +109,18 @@ main {
         }
     }
     .list-player {
-        font-family: "EB Garamond";
-        font-size: 2rem;
         width: 90%;
         margin: auto;
-        display: flex;
-        flex-direction: column;
-        background-color: #807873;
-        box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
-        border-radius: 1rem;
+        font-family: "EB Garamond";
+        font-size: 2rem;
         color: $white-dark;
+        background-color: #807873be;
+        box-shadow: 0 0 5px 3px rgba(0,0,0,1);
+        border-radius: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
         @media screen and (min-width:960px) {
             width: 23%;
             margin: 9rem 5rem 5rem;
@@ -153,7 +154,7 @@ main {
     .fight-controls {
         font-family: "EB Garamond";
         font-size: 2rem;
-        background-color: #807873;
+        background-color: #807873be;
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
         margin: 5rem auto;
