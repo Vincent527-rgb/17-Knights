@@ -2,17 +2,15 @@
 $text-color: #48484b;
 
 body {
-    position: relative;
-    height: 100vh;
     background-color: #fcf2e4;
 
     video {
         position: absolute;
-        top: 160px;
+        top: 0;
         z-index: -1;
         display: block;
         width: 100%;
-        height: 100%;
+        height: 102vh;
         object-fit: cover;
         box-shadow: 0 0 5px 3px rgba(0,0,0,0.4);
     }
@@ -34,24 +32,45 @@ header {
 
         span {
             color: $red-dark;
-            font-size: 8rem;
+            font-size: 4rem;
+            @media screen and (min-width:960px) {
+                font-size: 8rem;
+            }
+        }
+        img {
+            width: 5rem;
+            height: 5rem;
+            @media screen and (min-width:576px) and (max-width:960px) {
+                width: 8rem;
+                height: 8rem;
+            }
+            @media screen and (min-width:960px) {
+                width: 9.6rem;
+                height: 9.6rem;
+            }
         }
     }
 }
 main {
-    width: 40%;
+    position: relative;
+    padding-top: 14rem;
 
     .hero-build {
-        margin: 14rem 3rem 3rem;
         font-family: "EB Garamond";
         font-size: 2rem;
-        width: 50%;
+        width: 90%;
+        margin: 52rem auto 5rem;
         display: flex;
         flex-direction: column;
         background-color: #807873;
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
         border-radius: 1rem;
+
+        @media screen and (min-width:960px) {
+            width: 23%;
+            margin: 0 5rem 5rem;
+        }
         
         h2 {
             font-family: "Quintessential";
@@ -90,10 +109,10 @@ main {
         }
     }
     .list-player {
-        margin: 9rem 3rem 3rem;
         font-family: "EB Garamond";
         font-size: 2rem;
-        width: 50%;
+        width: 90%;
+        margin: auto;
         display: flex;
         flex-direction: column;
         background-color: #807873;
@@ -101,6 +120,10 @@ main {
         padding: 2rem;
         border-radius: 1rem;
         color: $white-dark;
+        @media screen and (min-width:960px) {
+            width: 23%;
+            margin: 9rem 5rem 5rem;
+        }
 
         .character-card {
             color: $main-dark;
@@ -133,17 +156,38 @@ main {
         background-color: #807873;
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
+        margin: 5rem auto;
+        width: 90%;
         border-radius: 1rem;
-        width: 1000px;
-        position: absolute;
-        top: 116%;
-        left: 34%;
         display: flex;
+        flex-direction: column;
         justify-content: space-evenly;
+
+        @media screen and (min-width:960px) and (max-width:1550px) {
+            flex-direction: column;
+            margin: 5rem auto;
+            width: 40%;
+            position: absolute;
+            top: 85%;
+            right: 20%;
+        }
+        @media screen and (min-width:1550px) {
+            max-width: 1000px;
+            width: 100%;
+            flex-direction: row;
+            position: absolute;
+            top: 85%;
+            left: 35%;
+        }
 
         select {
             border-radius: 1rem;
             padding: 1rem;
+            margin: 1rem 0;
+
+            @media screen and (min-width:1550px) {
+                margin: 0;
+            }
 
             &:focus {
                 border: 3px solid $yellow-medium;
@@ -154,7 +198,12 @@ main {
             padding: 1rem 3rem;
             border-radius: 3rem;
             border: 0;
+            align-self: center;
+            margin: 1rem 0;
             transition: .3s all ease-in-out;
+            @media screen and (min-width:960px) {
+                margin: 0;
+            }
 
             &:hover {
                 background-color: $yellow-medium;
