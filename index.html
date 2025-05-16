@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knights fight</title>
+  <!-- ---- Links fonts - Comfortaa, Righteous, REM, EB Garamond, Libre Baskerville, Quintessential and Twinkle Star ---- -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quintessential&family=REM:ital,wght@0,100..900;1,100..900&family=Righteous&family=Twinkle+Star&display=swap" rel="stylesheet">
+  
+  <!-- ---- Links to files -->
+  <link rel="stylesheet" href="styles/styles.min.css">
+  <script defer src="./scripts/main.js"></script>
+
+  <!-- ---- Link font awesome ---- -->
+  <script src="https://kit.fontawesome.com/338ba07762.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <video src="./img/10.mp4" autoplay muted loop></video>
+  <header>
+    <h1>
+      <img width="96" height="96" src="https://img.icons8.com/color/96/samurai-helmet.png" alt="samurai-helmet"/>
+      <span>&#xE01F;E&#xE153;&#xE150; &#xE1BA;IN&#xE032;</span>
+      <img width="96" height="96" src="https://img.icons8.com/color/96/samurai-helmet.png" alt="samurai-helmet"/>
+    </h1>
+  </header>
+  <main>
+    <form action="#" class="hero-build">
+      <h2>Build your hero</h2>
+      <label for="name">Name of your character:</label>
+      <input type="text" id="name" placeholder="Heroe's name" required>
+      <label for="strength">Strength:</label>
+      <input type="number" id="strength" placeholder="Heroe's strength" required>
+      <label for="Magic">Magic power:</label>
+      <input type="number" id="magic" placeholder="Heroe's magic" required>
+      <button>Create player</button>
+    </form>
+    <div class="list-player">Pas de joueur disponible.
+      <div class="character-card">
+        <p class="character-card__name">NOM</p>
+        <p class="character-card__strength">strength-display</p>
+        <p class="character-card__magic">strength-display</p>
+        <p class="character-card__mana">strength-display</p>
+        <p class="character-card__hp">strength-display</p>
+        <p class="character-card__hp-bar"></p>
+      </div>
+    </div>
+    <form action="#" class="fight-controls">
+      <select name="attacker" id="attacker">
+        <option value="">Choose an attacker</option>
+      </select>
+      <select name="defender" id="defender">
+        <option value="">Choose an defender</option>
+      </select>
+      <select name="attack-type" id="attack-type">
+        <option value="">Choisissez le type d'attaque</option>
+        <option value="swords">Swords</option>
+        <option value="magic">Magic</option>
+      </select>
+      <button>Attack</button>
+    </form>
+  </main>
+  
+</body>
+</html>
