@@ -37,8 +37,21 @@ class Knight {
             yourEnnemyDialog.textContent = `Retiens ${this.name}, c'est mon nom... et le jour de ta défaite !`;
         }
     }
+    attack(attacker, defender) {
+        const damage = attacker.strength;
+        defender.hp -= damage;
+        yourEnnemyCard.querySelector('.character-card__hp').textContent = `❤️ Vie : ${defender.hp}`;
+
+        const hpBar = yourEnnemyCard.querySelector('.character-card__hp-bar');
+        const hpPercentage = (defender.hp / 100) * 100;
+        hpBar.style.width = `${hpPercentage}%`;
+        // yourEnnemyCard.querySelector('.character-card__hp-bar').style.width = (defender.hp/100)*100;
+
+        yourPlayerDialog.textContent = `${attacker.name} attaque ${defender.name} et inflige ${damage} points de dégâts !`;
+    }
 }
 
+// Construire une nouvelle carte personnage
 function addKnight(name, strength, magic) {
     if (name === "" || strength === "" || magic === "") {
         alert("Veuillez remplir les champs");
@@ -49,6 +62,7 @@ function addKnight(name, strength, magic) {
     addDefender(new Knight(name, strength, magic));
 }
 
+// Afficher les personnages créés
 function displayKnights() {
     // Vider ma div container
     tagListPlayer.innerHTML = "";
@@ -111,6 +125,7 @@ function displayKnights() {
     }
 }
 
+// Remettre les champs input à 0
 function resetInputs() {
     inputname.value     = "";
     inputStrength.value = "";
@@ -118,7 +133,8 @@ function resetInputs() {
     inputname.focus();
 }
 
-// ~~~~ Fight with your Hero ~~~~
+// ~~~~ Select your Hero ~~~~
+// Select attacker
 function addAttacker(knight) {
     if (knights.length !== 0) {
 
@@ -130,6 +146,7 @@ function addAttacker(knight) {
     }
 }
 
+// Select defender
 function addDefender(knight) {
     if (knights.length !== 0) {
 
@@ -141,6 +158,7 @@ function addDefender(knight) {
     }
 }
 
+// Désactiver le personnage des champs select quand choisi
 function disabledOptionKnight (selectFighter, selectedFighter) {
     for (let i = 0; i < selectFighter.options.length; i++) {
         const option = selectFighter.options[i];
@@ -153,6 +171,7 @@ function disabledOptionKnight (selectFighter, selectedFighter) {
     }
 }
 
+// Afficher la carte du Chevalier choisi dans l'arène
 function displayOptionKnight (knight, element) {
     // Vider l'élément
     element.innerHTML = "";
@@ -187,6 +206,12 @@ function displayOptionKnight (knight, element) {
     divCardHp.textContent       = `❤️ Vie : ${knight.hp}`;
     divCardPotions.textContent  = `🧉 Potions : ${knight.potions}`;
 
+    // Mettre jour la barre hp de mes perso
+    // yourEnnemyCard.querySelector('.character-card__hp-bar').style.width = (defender.hp/100)*100;
+    const hpBar = divCardHpBar;
+    const hpPercentage = (knight.hp / 100) * 100;
+    hpBar.style.width = `${hpPercentage}%`;
+
     // Ajouter les div à l'élément
     divCharacter.append(divCardName);
     divCharacter.append(divCardStrength);
@@ -198,14 +223,22 @@ function displayOptionKnight (knight, element) {
     element.append(divCharacter)
 }
 
+// ~~~~ Fight with your Hero ~~~~
+
+
 // ==== Evénements ====
 // ~~~~ Hero creation ~~~~
 addBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    const randomNumber = Math.random().toFixed(0)
 
     const name      = inputname.value;
-    const strength  = parseFloat(inputStrength.value);
-    const magic     = parseFloat(inputMagic.value);
+    let strength  = parseFloat(inputStrength.value) * randomNumber;
+    let magic     = parseFloat(inputMagic.value) * randomNumber;
+
+    // Minimum 30 en force et en magie (choisir la plus haute valeur contenue dans Math.max)
+    strength = Math.max(strength, 30);
+    magic = Math.max(magic, 30);
 
     addKnight(name, strength, magic);
     displayKnights(name, strength, magic, 50, 100, 2);
@@ -245,7 +278,27 @@ selectDefender.addEventListener("change", function () {
     }
 })
 
+// ~~~~ ATTACK ~~~~
 attackBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
+    // Récupérer les noms des personnages sélectionnés
+    const attackerName = selectAttacker.value;
+    const defenderName = selectDefender.value;
+
+
+    const attacker = knights.find(knight => knight.name === attackerName);
+    const defender = knights.find(knight => knight.name === defenderName);
+
+    if (attacker && defender) {
+        attacker.attack(attacker, defender);
+    }
 })
+
+// todo: empêcher les points de vie d'aller sous zéro, améliorer la bar de hp? (ou refaire l'exo)
+// todo2: faire les attaques magiques
+// todo3: choisir le type d'attaque select attack
+// todo4: prendre une potion => rajouter code?
+// todo5: organiser la contre attaque
+// todo6: message gameover ou victory
+// todo7: transformer l'exo en projet pro pour portfolio (factoring, design, responsive)

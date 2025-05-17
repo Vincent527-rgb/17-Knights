@@ -107,6 +107,7 @@ h2 {
   background: linear-gradient(to right, #333, #0f9b0f);
   border-radius: 3rem;
   border: 1px solid #333;
+  transition: width 0.3s ease;
 }
 
 .btn {

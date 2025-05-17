@@ -34,5 +34,6 @@ h2 {
         background: linear-gradient(to right, $main-dark, #0f9b0f);
         border-radius: 3rem;
         border: 1px solid $main-dark;
+        transition: width 0.3s ease;
     }
 }
