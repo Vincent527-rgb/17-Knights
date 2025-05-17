@@ -10,7 +10,12 @@ main {
     padding-top: 14rem;
     display: flex;
     justify-content: space-between;
+    align-items: start;
     flex-wrap: wrap;
+
+    @media screen and (min-width:960px) {
+        height: 102vh;
+    }
 
     video {
         position: absolute;
@@ -89,60 +94,6 @@ main {
                 grid-template-columns: repeat(4, 195px);
                 gap: 1rem;
                 overflow-x: scroll;
-            }
-        }
-    }
-    .fight-controls {
-        font-family: "EB Garamond";
-        font-size: 2rem;
-        background-color: #807873be;
-        box-shadow: 0 0 5px 3px rgba(0,0,0,1);
-        padding: 2rem;
-        margin: 5rem auto;
-        max-width: 90%;
-        width: 100%;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        flex-grow: 1;
-
-        @media screen and (min-width:960px) and (max-width:1550px) {
-            max-width: 1000px;
-            width: 100%;
-            margin: 5rem auto;
-        }
-        @media screen and (min-width:1550px) {
-            max-width: 1000px;
-            width: 100%;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-
-        img {
-            display: inline-block;
-            align-self: center;
-            margin: 2rem 0;
-
-            @media screen and (min-width:960px) and (max-width:1550px) {
-                align-self: center;
-            }
-            @media screen and (min-width:1550px) {
-                align-self: auto;
-                margin: 0;
-            }
-        }
-        select {
-            border-radius: 1rem;
-            padding: 1rem;
-            margin: 1rem 0;
-
-            @media screen and (min-width:1550px) {
-                margin: 0;
-            }
-
-            &:focus {
-                border: 3px solid $yellow-medium;
             }
         }
     }

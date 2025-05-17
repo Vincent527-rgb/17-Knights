@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Knights fight</title>
-  <!-- ---- Links fonts - Comfortaa, Righteous, REM, EB Garamond, Libre Baskerville, Quintessential and Twinkle Star ---- -->
+  <!-- ---- Links fonts - Comfortaa, Righteous, REM, EB Garamond, Libre Baskerville, Quintessential and Twinkle Star + Nosifer---- -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quintessential&family=REM:ital,wght@0,100..900;1,100..900&family=Righteous&family=Twinkle+Star&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
   
   <!-- ---- Links to files -->
   <link rel="stylesheet" href="styles/styles.min.css">
@@ -49,7 +52,10 @@
       <h2>Heroes available</h2>
       <div class="list-player"><div class="character-card">No player logged in.</div></div>
     </div>
+  </main>
 
+  <footer>
+    <h1>Forge of a Hero</h1>
     <!-- ---- Fighting arena ---- -->
     <form action="#" class="fight-controls">
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
@@ -67,20 +73,21 @@
       <button class=".attack-btn btn">Attack</button>
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
     </form>
-  </main>
-  <footer>
-    <div class="your-player">
-      <h2>Your player</h2>
-      <div class="your-player__card-status" title="Player status"></div>
-      <div class="your-player__dialog" title="Dialog box">Your fighter say: </div>
-    </div>
-    <div class="arena">
-      <h2>Arena</h2>
-    </div>
-    <div class="your-ennemy">
-      <h2>Your ennemy</h2>
-      <div class="your-ennemy__card-status" title="Player status"></div>
-      <div class="your-ennemy__dialog" title="Dialog box">Your ennemy say: </div>
+
+    <div class="gameplay">
+      <div class="your-player">
+        <h2>Your player</h2>
+        <div class="your-player__card-status" title="Player status"></div>
+        <div class="your-player__dialog" title="Dialog box">Your fighter say: </div>
+      </div>
+      <div class="arena">
+        <video class="video-arena" src="./img/samurai-autumn-wallpaperwaifu-com.mp4" autoplay muted loop></video>
+      </div>
+      <div class="your-ennemy">
+        <h2>Your ennemy</h2>
+        <div class="your-ennemy__card-status" title="Player status"></div>
+        <div class="your-ennemy__dialog" title="Dialog box">Your ennemy say: </div>
+      </div>
     </div>
   </footer>
 </body>
