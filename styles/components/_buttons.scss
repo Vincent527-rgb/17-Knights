@@ -18,7 +18,24 @@
     }
 }
 .delete-btn {
+    width: 70%;
     background-color: transparent;
     border: 0;
     cursor: pointer;
+    position: relative;
+
+    &:hover:after {
+        content: attr(data-title);
+        width: 100%;
+        font-size: 1.6rem;
+        background-color: $white-medium;
+        border: 1px solid $main-darker;
+        border-radius: 1rem;
+        display: block;
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        z-index: 100;
+        opacity: .6;
+    }
 }

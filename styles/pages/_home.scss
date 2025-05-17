@@ -34,7 +34,11 @@ main {
         display: flex;
         flex-direction: column;
 
-        @media screen and (min-width:960px) {
+        @media screen and (min-width:960px) and (max-width:1550px) {
+            max-width: 40%;
+            margin: 0 auto 5rem;
+        }
+        @media screen and (min-width:1550px) {
             width: 23%;
             margin: 0 5rem 5rem;
         }
@@ -57,51 +61,34 @@ main {
     }
     .heroes {
         width: 90%;
-        margin: 0 auto 5rem;
+        margin: 5rem auto;
         padding: 2rem;
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         border-radius: 1rem;
         background-color: #807873be;
 
         @media screen and (min-width:576px) and (max-width:960px) {
-            margin: 5rem auto;
             width: 90%;
         }
-        @media screen and (min-width:960px) {
+        @media screen and (min-width:960px) and (max-width:1550px) {
+            width: 40%;
+        }
+        @media screen and (min-width:1550px) {
             width: 23%;
             margin: 0 5rem 5rem;
         }
-    }
-    .list-player {
-        font-family: "EB Garamond";
-        font-size: 2rem;
-        color: $white-dark;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        
-        .character-card {
-            color: $main-dark;
-            border: 2px solid #e92f3e;
-            background-color: #e92f3f2d;
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .list-player {
+            font-family: "EB Garamond";
+            font-size: 2rem;
+            color: $white-dark;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
 
-            &__name {
-                text-transform: uppercase;
-                font-weight: 800;
-            }
-            &__hp-bar {
-                height: 1.5rem;
-                width: 70%;
-                margin-top: 1rem;
-                background: linear-gradient(to right, $main-dark, #0f9b0f);
-                border-radius: 3rem;
-                border: 1px solid $main-dark;
+            @media screen and (min-width:576px) {
+                grid-template-columns: repeat(4, 195px);
+                gap: 1rem;
+                overflow-x: scroll;
             }
         }
     }
@@ -112,15 +99,18 @@ main {
         box-shadow: 0 0 5px 3px rgba(0,0,0,1);
         padding: 2rem;
         margin: 5rem auto;
-        width: 90%;
+        max-width: 90%;
+        width: 100%;
         border-radius: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        flex-grow: 1;
 
         @media screen and (min-width:960px) and (max-width:1550px) {
+            max-width: 1000px;
+            width: 100%;
             margin: 5rem auto;
-            width: 40%;
         }
         @media screen and (min-width:1550px) {
             max-width: 1000px;
@@ -134,7 +124,10 @@ main {
             align-self: center;
             margin: 2rem 0;
 
-            @media screen and (min-width:960px) {
+            @media screen and (min-width:960px) and (max-width:1550px) {
+                align-self: center;
+            }
+            @media screen and (min-width:1550px) {
                 align-self: auto;
                 margin: 0;
             }

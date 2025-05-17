@@ -17,39 +17,50 @@
   <script src="https://kit.fontawesome.com/338ba07762.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- ==== HEADER ==== -->
   <header>
     <h1>
       <img width="96" height="96" src="https://img.icons8.com/color/96/samurai-helmet.png" alt="samurai-helmet"/>
-      <span>&#xE01F;E&#xE153;&#xE150; &#xE1BA;IN&#xE032;</span>
+      <!-- H et G avec des ailes => &#xE01F; &#xE032; -->
+      <span>HE&#xE153;&#xE150; &#xE1BA;ING</span>
       <img width="96" height="96" src="https://img.icons8.com/color/96/samurai-helmet.png" alt="samurai-helmet"/>
     </h1>
   </header>
+
+  <!-- ==== MAIN ==== -->
   <main>
+    <!-- ---- BG video ---- -->
     <video src="./img/10.mp4" autoplay muted loop></video>
+
+    <!-- ---- Build your hero ---- -->
     <form action="#" class="hero-build">
       <h2>Build your hero</h2>
       <label for="name">Name of your character:</label>
-      <input type="text" id="name" placeholder="Heroe's name" required>
+      <input type="text" id="name" placeholder="Hero's name" required>
       <label for="strength">Strength:</label>
-      <input type="number" id="strength" placeholder="Heroe's strength" required>
+      <input type="number" id="strength" placeholder="Hero's strength" required>
       <label for="Magic">Magic power:</label>
-      <input type="number" id="magic" placeholder="Heroe's magic" required>
+      <input type="number" id="magic" placeholder="Hero's magic" required>
       <button class="add-btn btn">Create player</button>
     </form>
+
+    <!-- ---- Display your hero ---- -->
     <div class="heroes">
       <h2>Heroes available</h2>
-      <div class="list-player"><div class="character-card">Pas de joueur disponible.</div></div>
+      <div class="list-player"><div class="character-card">No player logged in.</div></div>
     </div>
+
+    <!-- ---- Fighting arena ---- -->
     <form action="#" class="fight-controls">
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
       <select name="attacker" id="attacker">
         <option value="">Choose an attacker</option>
       </select>
       <select name="defender" id="defender">
-        <option value="">Choose an defender</option>
+        <option value="">Choose a defender</option>
       </select>
       <select name="attack-type" id="attack-type">
-        <option value="">Choisissez le type d'attaque</option>
+        <option value="">Choose the type of attack</option>
         <option value="swords">Swords</option>
         <option value="magic">Magic</option>
       </select>
@@ -57,5 +68,20 @@
       <img width="64" height="64" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-katana-japan-microdots-premium-microdot-graphic.png" alt="external-katana-japan-microdots-premium-microdot-graphic"/>
     </form>
   </main>
+  <footer>
+    <div class="your-player">
+      <h2>Your player</h2>
+      <div class="your-player__card-status" title="Player status"></div>
+      <div class="your-player__dialog" title="Dialog box">Your fighter say: </div>
+    </div>
+    <div class="arena">
+      <h2>Arena</h2>
+    </div>
+    <div class="your-ennemy">
+      <h2>Your ennemy</h2>
+      <div class="your-ennemy__card-status" title="Player status"></div>
+      <div class="your-ennemy__dialog" title="Dialog box">Your ennemy say: </div>
+    </div>
+  </footer>
 </body>
 </html>
